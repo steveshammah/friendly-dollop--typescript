@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import editIcon from "../edit-icon.svg";
 import saveIcon from "../save-icon.svg";
+import {UsersInterface} from '../contexts/usersContext';
 
 
 
@@ -18,50 +19,21 @@ export interface DicTypeI {
   body: string
 }
 
-type UserProps = {
-  users: 
-  {
-    id: number,
-    name: string,
-    username: string,
-    email: string,
-    address: {
-      street: string,
-      suite: string,
-      city: string,
-      zipcode: string,
-      geo: {
-        lat: string,
-        lng: string
-      }
-    },
-    phone: string,
-    website: string,
-    company: {
-      name: string,
-      catchPhrase: string,
-      bs: string
-    }
-  }[],
-  loading: boolean
-}
 
-const UserPosts = (props: UserProps) => {
+
+const UserPosts = (props: UsersInterface) => {
   let { userId } = useParams();
   const [usersPosts, setUsersPosts] = useState({} as DicTypeI);
-  const [editName, setEditName] = useState(false);
+  const [editName, setEditName] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
   const [user, setUser] = useState({} as DicType);
   
   useEffect(() => {
     fetchData();
-
-    return () => {};
   }, []);
 
   useEffect(() => {
-    return () => {};
   }, [user]);
 
 
@@ -70,7 +42,7 @@ const UserPosts = (props: UserProps) => {
       `http://jsonplaceholder.typicode.com/posts/${userId}`
     );
     const data = await response.json();
-    const findUser:string[] = props.users.find((author) => author.id === parseInt(userId));
+    const findUser:any = props.users.find((author) => author.id === parseInt(userId));
     setUser(findUser);
     setUsersPosts(data);
 
@@ -79,7 +51,7 @@ const UserPosts = (props: UserProps) => {
     }, 2000);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     const newName = e.target.value;
     user.name = newName;
   };

@@ -1,15 +1,22 @@
 import { createContext, useState, useEffect, ReactNode } from "react";
 
-export const usersContext = createContext({});
+
+// export type Context = {
+//   stateUsers: UserProps,
+//   loading: boolean
+// }
 
 
 export interface ProviderProps{
   children: ReactNode
 }
-export interface AppProps    {
-  stateUsers: [
-  {
-    id: number,
+
+export interface UsersInterface{
+  users: User[],
+  loading?: boolean
+}
+export interface User{
+   id: number,
     name: string,
     username: string,
     email: string,
@@ -30,13 +37,14 @@ export interface AppProps    {
       catchPhrase: string,
       bs: string
     }
-  },
-],
-  loading: boolean
-}
+  }
+
+
+export const usersContext = createContext({} as UsersInterface);
+
 
 const UsersState = (props: ProviderProps) => {
-  const [stateUsers, setStateusers] = useState({} as AppProps);
+  const [users, setStateusers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -56,7 +64,7 @@ const UsersState = (props: ProviderProps) => {
   }, []);
 
   return (
-    <usersContext.Provider value={{ stateUsers, loading }}>
+    <usersContext.Provider value={{users, loading }}>
       {props.children}
     </usersContext.Provider>
   );

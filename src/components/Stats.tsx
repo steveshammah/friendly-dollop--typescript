@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {StateProp} from '../contexts/usersContext'
+import { User, UsersInterface} from '../contexts/usersContext'
 
-
+interface Address {
+      street: string,
+      suite: string
+      city: string,
+      zipcode: string,
+      geo : {
+        lat: string
+        lng: string
+      }
+}
 interface Provider{
-
+  username: string,
+  id: number,
+  address:  Address
 }
 
-interface User {
 
-}
-const Stats = (props: StateProp ) => {
+const Stats = (props:UsersInterface) => {
   const [address, setAddress] = useState<Provider[]>([]);
   const handleClick = (filter: string) => {
-    const filtered: string[] = props.stateUsers.filter((user: Array<string> ) =>
+    const filtered:any= props.users.filter((user: User ) =>
       user.address.suite.includes(filter)
     );
     setAddress(filtered);

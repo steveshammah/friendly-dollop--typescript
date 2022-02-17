@@ -1,38 +1,13 @@
 import { Link } from "react-router-dom";
 import Spinner from "./Spinner";
 import Stats from "./Stats";
+import { UsersInterface} from '../contexts/usersContext';
 
 
-interface HomeProps  {
-  users: [
-  {
-    id: number,
-    name: string,
-    username: string,
-    email: string,
-    address: {
-      street: string,
-      suite: string,
-      city: string,
-      zipcode: string,
-      geo: {
-        lat: string,
-        lng: string
-      }
-    },
-    phone: string,
-    website: string,
-    company: {
-      name: string,
-      catchPhrase: string,
-      bs: string
-    }
-  },
-],
-  loading: boolean
-}
 
-const Home = (props: HomeProps) => {
+
+
+const Home = (props: UsersInterface) => {
   return (
     <>
       {props.loading && props.users ? (
@@ -60,7 +35,7 @@ const Home = (props: HomeProps) => {
             );
           })}
 
-          <Stats stateUsers={props.users} />
+          <Stats users={props.users} />
         </div>
       )}
     </>
