@@ -1,0 +1,46 @@
+{ "users" : [
+    {
+        "name": "John",
+        "posts_count": 1,
+        "posts": [
+            {
+                "title": "Post One",
+                "content": "Content One"
+            }
+        ]
+    },
+       {
+        "name": "Jane",
+        "posts_count": 2,
+        "posts": [
+            {
+                "title": "Post One",
+                "content": "Content One"
+            },
+               {
+                "title": "Post Two",
+                "content": "Content Two"
+            }
+        ]
+    },
+       {
+        "name": "Foo",
+        "posts_count": 3,
+        "posts": [
+            {
+                "title": "Post One",
+                "content": "Content One"
+            },
+            {
+                "title": "Post Two",
+                "content": "Content Two"
+            }
+            ,
+            {
+                "title": "Post Three",
+                "content": "Content Three"
+            }
+        ]
+    }
+        
+]}

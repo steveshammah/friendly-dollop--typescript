@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;0,900;1,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  height: 80vh;
+}
+header {
+  height: 70px;
+  background-color: black;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 1000;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+.banner {
+  text-align: center;
+  height: 70px;
+}
+
+.stats-wrapper {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav {
+  height: 20px;
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.nav span {
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nav span:hover,
+.nav span:active {
+  text-decoration: underline;
+  color: red;
+}
+.stats {
+  height: auto;
+  /* background-color: #333; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.user-stats {
+  height: 80px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#profile-link {
+  text-transform: capitalize;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.user-container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+  min-width: 90vw;
+}
+.user-container a {
+  text-decoration: none;
+  color: black;
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+  background-color: #333;
+  margin: 5px;
+}
+
+.user-container a:hover {
+  box-shadow: 5px 5px 5px #fff;
+}
+.user-container a h1 {
+  font-size: 1.2rem;
+}
+.user-container a h2 {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+.user-container a h3 {
+  font-size: 0.8rem;
+}
+
+.user-data {
+  height: 200px;
+  width: 250px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.meta-data {
+  font-size: small;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  width: inherit;
+  padding: 5px;
+}
+
+.post-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.btn {
+  height: 50px;
+  width: 100px;
+  background-color: rgb(43, 43, 180);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.post-details {
+  flex: 1;
+  width: 80%;
+  margin: auto;
+}
+.name,
+.edit-name {
+  display: flex;
+  align-items: center;
+}
+.name h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.name img,
+.edit-name img {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.edit-name {
+  display: none;
+}
+
+.active {
+  display: flex;
+  align-items: center;
+}
+
+.post-details h4 {
+  text-transform: lowercase;
+}
+
+.post {
+  height: 80%;
+}
+
+.post h3 {
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+
+.post p {
+  margin-top: 20px;
+  border: 1px solid #333;
+  padding: 10px;
+  min-height: 50%;
+}
